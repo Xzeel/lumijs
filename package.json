@@ -1,5 +1,5 @@
 {
-  "name": "@Xzeel/lumijs",
+  "name": "@xzeelarcadia/lumijs",
   "version": "1.0.0",
   "description": "Transpiler bahasa pemrograman LumiJS — bahasa Indonesia ke JavaScript.",
   "main": "src/lumi.js",
@@ -15,8 +15,17 @@
     "bahasa-indonesia",
     "javascript"
   ],
+  "author": "XzeelArcadia",
   "license": "MIT",
   "engines": {
     "node": ">=14"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xzeel/lumijs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Xzeel/lumijs/issues"
+  },
+  "homepage": "https://github.com/Xzeel/lumijs"
 }
