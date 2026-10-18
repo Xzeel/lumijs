@@ -1,0 +1,26 @@
+// Kelas sederhana
+kelas Hewan {
+  constructor(nama, suara) {
+    ini.nama = nama
+    ini.suara = suara
+  }
+
+  bersuara() {
+    cetak(ini.nama + " berkata: " + ini.suara + "!")
+  }
+}
+
+kelas Kucing warisi Hewan {
+  constructor(nama) {
+    super(nama, "Meow")
+  }
+
+  purr() {
+    cetak(ini.nama + " sedang mendengkur...")
+  }
+}
+
+tetap kucing = baru Kucing("Milo")
+kucing.bersuara()
+kucing.purr()
+

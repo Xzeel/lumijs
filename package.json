@@ -1,0 +1,22 @@
+{
+  "name": "@Xzeel/lumijs",
+  "version": "1.0.0",
+  "description": "Transpiler bahasa pemrograman LumiJS — bahasa Indonesia ke JavaScript.",
+  "main": "src/lumi.js",
+  "bin": {
+    "lumi": "./src/lumi.js"
+  },
+  "scripts": {
+    "test": "node src/lumi.js contoh/halo.lumi",
+    "contoh": "node src/lumi.js contoh/lengkap.lumi"
+  },
+  "keywords": [
+    "transpiler",
+    "bahasa-indonesia",
+    "javascript"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  }
+}

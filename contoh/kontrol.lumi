@@ -1,0 +1,27 @@
+// Percabangan jika-lainnya
+misal nilai = 85
+
+jika (nilai >= 90) {
+  cetak("Nilai: A")
+} lainnya jika (nilai >= 80) {
+  cetak("Nilai: B")
+} lainnya jika (nilai >= 70) {
+  cetak("Nilai: C")
+} lainnya {
+  cetak("Nilai: D")
+}
+
+// Perulangan untuk
+cetak("Hitung mundur:")
+untuk (misal i = 5; i >= 1; i--) {
+  cetak(i)
+}
+cetak("Meluncur!")
+
+// Perulangan selama
+misal hitung = 0
+selama (hitung < 3) {
+  cetak("Hitungan: " + hitung)
+  hitung++
+}
+

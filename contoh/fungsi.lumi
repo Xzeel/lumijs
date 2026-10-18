@@ -1,0 +1,17 @@
+// Fungsi biasa
+fungsi luasKotak(sisi) {
+  kembalikan sisi * sisi
+}
+
+// Fungsi dengan beberapa parameter
+fungsi luasPersegi(panjang, lebar) {
+  kembalikan panjang * lebar
+}
+
+cetak("Luas kotak 5x5: " + luasKotak(5))
+cetak("Luas persegi 4x7: " + luasPersegi(4, 7))
+
+// Arrow function (fungsi panah)
+tetap kali2 = (x) => x * 2
+cetak("3 × 2 = " + kali2(3))
+

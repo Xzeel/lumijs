@@ -1,0 +1,9 @@
+// Program pertama dalam LumiJS!
+// Ini adalah komentar — tidak akan diterjemahkan
+
+cetak("Halo, Dunia!")
+
+// String di bawah berisi kata 'jika' dan 'fungsi' —
+// kata-kata itu TIDAK boleh diterjemahkan karena di dalam string
+cetak("Kata 'jika' dan 'fungsi' di dalam string tidak diterjemahkan")
+

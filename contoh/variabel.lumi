@@ -1,0 +1,9 @@
+// Deklarasi variabel
+misal nama = "Budi"
+tetap umur = 25
+misal tahunLahir = 2025 - umur
+
+cetak("Nama: " + nama)
+cetak("Umur: " + umur)
+cetak("Tahun lahir: " + tahunLahir)
+

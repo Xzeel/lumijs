@@ -1,0 +1,95 @@
+// ============================================================
+// Contoh Lengkap LumiJS — Menampilkan semua fitur
+// ============================================================
+
+// ── 1. Variabel ──────────────────────────────────────
+tetap NAMA_APLIKASI = "LumiJS Demo"
+misal versi = 1.0
+
+cetak("=== " + NAMA_APLIKASI + " v" + versi + " ===")
+cetak()
+
+// ── 2. Fungsi ────────────────────────────────────────
+fungsi luasSegitiga(alas, tinggi) {
+  kembalikan 0.5 * alas * tinggi
+}
+
+tetap luasLingkaran = (jariJari) => {
+  tetap PI = 3.14159
+  kembalikan PI * jariJari * jariJari
+}
+
+cetak("Luas segitiga (alas=10, tinggi=5): " + luasSegitiga(10, 5))
+cetak("Luas lingkaran (r=7): " + luasLingkaran(7))
+cetak()
+
+// ── 3. Array dan perulangan ──────────────────────────
+tetap buah = ["Apel", "Mangga", "Jeruk", "Durian", "Rambutan"]
+
+cetak("Daftar buah:")
+untuk (misal i = 0; i < buah.length; i++) {
+  cetak("  " + (i + 1) + ". " + buah[i])
+}
+cetak()
+
+// ── 4. Percabangan ───────────────────────────────────
+fungsi nilaiHuruf(skor) {
+  jika (skor >= 90) kembalikan "A"
+  lainnya jika (skor >= 80) kembalikan "B"
+  lainnya jika (skor >= 70) kembalikan "C"
+  lainnya jika (skor >= 60) kembalikan "D"
+  lainnya kembalikan "E"
+}
+
+tetap daftarNilai = [95, 82, 67, 78, 54, 91]
+cetak("Konversi nilai:")
+untuk (misal i = 0; i < daftarNilai.length; i++) {
+  cetak("  Skor " + daftarNilai[i] + " → " + nilaiHuruf(daftarNilai[i]))
+}
+cetak()
+
+// ── 5. Try-catch ─────────────────────────────────────
+coba {
+  cetak("Mencoba operasi berbahaya...")
+  lempar baru Error("Ups! Terjadi kesalahan!")
+} tangkap (e) {
+  cetak("Tertangkap: " + e.message)
+} akhirnya {
+  cetak("Blok 'akhirnya' selalu dijalankan")
+}
+cetak()
+
+// ── 6. Kelas ─────────────────────────────────────────
+kelas Buku {
+  constructor(judul, penulis, halaman) {
+    ini.judul = judul
+    ini.penulis = penulis
+    ini.halaman = halaman
+  }
+
+  info() {
+    kembalikan '"' + ini.judul + '" oleh ' + ini.penulis + ' (' + ini.halaman + ' hal.)'
+  }
+}
+
+kelas BukuDigital warisi Buku {
+  constructor(judul, penulis, halaman, format) {
+    super(judul, penulis, halaman)
+    ini.format = format
+  }
+
+  info() {
+    kembalikan super.info() + " [" + ini.format + "]"
+  }
+}
+
+tetap buku1 = baru Buku("Laskar Pelangi", "Andrea Hirata", 529)
+tetap buku2 = baru BukuDigital("Bumi Manusia", "Pramoedya", 535, "PDF")
+
+cetak("Perpustakaan:")
+cetak("  " + buku1.info())
+cetak("  " + buku2.info())
+cetak()
+
+cetak("✨ Semua contoh berhasil dijalankan!")
+
