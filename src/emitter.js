@@ -46,7 +46,6 @@ class Emitter {
       const barisTujuan = simpul.baris;
       const kolomTujuan = simpul.kolom;
 
-      // Jika simpul berada di baris baru
       if (barisTujuan > barisSaatIni) {
         const jumlahBaris = barisTujuan - barisSaatIni;
         bagian.push("\n".repeat(jumlahBaris));
@@ -55,19 +54,16 @@ class Emitter {
       }
 
       if (adalahAwalBaris) {
-        // Di awal baris, gunakan kolom untuk indentasi
         if (kolomTujuan > 1) {
           bagian.push(" ".repeat(kolomTujuan - 1));
         }
         adalahAwalBaris = false;
       } else {
-        // Di tengah baris, gunakan aturan spasi cerdas
         if (this.perluSpasi(sebelum, simpul)) {
           bagian.push(" ");
         }
       }
 
-      // Tulis nilai simpul
       let teks;
       switch (simpul.tipe) {
         case TipeSimpul.KataKunci:
@@ -89,7 +85,6 @@ class Emitter {
 
       bagian.push(teks);
 
-      // Perbarui posisi baris (untuk komentar blok / template string multi-baris)
       const barisTeks = teks.split("\n");
       if (barisTeks.length > 1) {
         barisSaatIni += barisTeks.length - 1;
@@ -104,9 +99,8 @@ class Emitter {
 }
 
 /**
- * Hasilkan kode JavaScript dari AST.
- * @param {Object} ast — AST hasil dari parsing()
- * @returns {string} kode JavaScript
+ * @param {Object} ast
+ * @returns {string}
  */
 function hasilkan(ast) {
   return new Emitter(ast).hasilkan();

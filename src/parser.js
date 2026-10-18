@@ -1,20 +1,8 @@
-// src/parser.js
-// ============================================================
-// Parser — mengubah daftar token menjadi AST (Abstract Syntax Tree).
-//
-// Untuk transpilasi langsung Lumi → JS, kita menggunakan
-// daftar simpul datar dengan informasi terjemahan.
-// String dan komentar dilewatkan tanpa perubahan.
-// ============================================================
-
 "use strict";
 
 const { terjemahkan } = require("./kamus");
 const { TipeToken } = require("./tokenizer");
 
-/**
- * Tipe simpul AST
- */
 const TipeSimpul = Object.freeze({
   KataKunci     : "KataKunci",
   Pengenal      : "Pengenal",
@@ -25,11 +13,6 @@ const TipeSimpul = Object.freeze({
   Komentar      : "Komentar",
 });
 
-/**
- * Parser sederhana yang mengubah daftar token menjadi daftar simpul AST.
- * Untuk bahasa transpilasi langsung, kita tidak perlu pohon bersarang —
- * cukup daftar datar dengan informasi terjemahan.
- */
 class Parser {
   constructor(daftarToken) {
     this.token = daftarToken;
@@ -121,9 +104,8 @@ class Parser {
 }
 
 /**
- * Parsing daftar token menjadi AST.
- * @param {Array} daftarToken — hasil dari tokenisasi()
- * @returns {Object} AST dengan tipe "Program"
+ * @param {Array} daftarToken
+ * @returns {Object}
  */
 function parsing(daftarToken) {
   return new Parser(daftarToken).parsing();

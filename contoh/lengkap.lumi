@@ -91,5 +91,5 @@ cetak("  " + buku1.info())
 cetak("  " + buku2.info())
 cetak()
 
-cetak("✨ Semua contoh berhasil dijalankan!")
+cetak("Semua contoh berhasil dijalankan!")
 

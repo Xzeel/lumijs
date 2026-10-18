@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-// src/lumi.js
-// ============================================================
-// LumiJS — Transpiler Bahasa Indonesia → JavaScript
-// Penggunaan: node src/lumi.js <berkas.lumi>
-// ============================================================
 
 "use strict";
 
@@ -15,7 +10,6 @@ const { tokenisasi } = require("./tokenizer");
 const { parsing } = require("./parser");
 const { hasilkan } = require("./emitter");
 
-// ── Warna terminal ───────────────────────────────────
 const W = {
   reset: "\x1b[0m",
   merah: "\x1b[31m",
@@ -70,7 +64,6 @@ function utama() {
   const berkasLumi = args[0];
   const bendera = new Set(args.slice(1));
 
-  // Validasi ekstensi
   if (path.extname(berkasLumi) !== ".lumi") {
     console.error(
       `${W.merah}Kesalahan:${W.reset} Berkas harus berekstensi .lumi`,
@@ -78,7 +71,6 @@ function utama() {
     process.exit(1);
   }
 
-  // Baca berkas
   let sumberKode;
   try {
     sumberKode = fs.readFileSync(berkasLumi, "utf-8");
@@ -95,7 +87,6 @@ function utama() {
   console.log();
 
   try {
-    // ── Tahap 1: Tokenisasi ──────────────────────────
     const daftarToken = tokenisasi(sumberKode);
 
     if (bendera.has("--token")) {
@@ -110,7 +101,6 @@ function utama() {
       console.log();
     }
 
-    // ── Tahap 2: Parsing ─────────────────────────────
     const ast = parsing(daftarToken);
 
     if (bendera.has("--ast")) {
@@ -119,7 +109,6 @@ function utama() {
       console.log();
     }
 
-    // ── Tahap 3: Emisi kode ──────────────────────────
     const kodeJS = hasilkan(ast);
 
     if (bendera.has("--cetak")) {
@@ -132,7 +121,6 @@ function utama() {
       console.log();
     }
 
-    // Jika hanya minta cetak/token/ast tanpa --jalankan, hentikan
     if (
       (bendera.has("--cetak") ||
         bendera.has("--token") ||
@@ -142,7 +130,6 @@ function utama() {
       if (bendera.has("--cetak")) return;
     }
 
-    // ── Tahap 4: Eksekusi ────────────────────────────
     console.log(`${W.hijau}══════ HASIL EKSEKUSI ══════${W.reset}`);
 
     const konteks = vm.createContext({
