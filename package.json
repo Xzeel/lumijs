@@ -4,7 +4,7 @@
   "description": "Transpiler bahasa pemrograman LumiJS — bahasa Indonesia ke JavaScript.",
   "main": "src/lumi.js",
   "bin": {
-    "lumi": "./src/lumi.js"
+    "lumi": "src/lumi.js"
   },
   "scripts": {
     "test": "node src/lumi.js contoh/halo.lumi",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Xzeel/lumijs.git"
+    "url": "git+https://github.com/Xzeel/lumijs.git"
   },
   "bugs": {
     "url": "https://github.com/Xzeel/lumijs/issues"
